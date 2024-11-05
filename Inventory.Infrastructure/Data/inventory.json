@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "Name": "Laptop",
+    "Description": "High-performance laptop",
+    "Quantity": 5,
+    "Price": 1000.99,
+    "Category": "Electronics"
+  },
+  {
+    "Id": 2,
+    "Name": "Mouse",
+    "Description": "Wireless mouse",
+    "Quantity": 25,
+    "Price": 15.50,
+    "Category": "Accessories"
+  },
+  {
+    "Id": 3,
+    "Name": "Keyboard",
+    "Description": "Mechanical keyboard",
+    "Quantity": 12,
+    "Price": 45.00,
+    "Category": "Accessories"
+  },
+  {
+    "Id": 4,
+    "Name": "Monitor",
+    "Description": "27-inch 4K monitor",
+    "Quantity": 7,
+    "Price": 299.99,
+    "Category": "Electronics"
+  },
+  {
+    "Id": 5,
+    "Name": "Chair",
+    "Description": "Ergonomic office chair",
+    "Quantity": 10,
+    "Price": 150.00,
+    "Category": "Furniture"
+  }
+]
