@@ -1,3 +1,7 @@
+using Inventory.Application.Interfaces;
+using Inventory.Application.Services;
+using Inventory.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// dependencies
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ProductRepository>();
 
 var app = builder.Build();
 
