@@ -48,5 +48,19 @@ namespace Inventory.API.Controllers
 
             return Ok(product);
         }
+
+        [HttpGet("price/greatherThan/{price}")]
+        public ActionResult<List<Product>> GetByPriceGreatherThan(decimal price)
+        {
+            var products = _productService.GetProducts()
+                .Where(p => p.Price > price)
+                .ToList();
+
+            if (products == null)
+                return NotFound($"No se encontraron productos con un precio mayoa a: {price}.");
+
+            return Ok(products);
+
+        }
     }
 }
