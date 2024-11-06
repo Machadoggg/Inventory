@@ -21,5 +21,20 @@ namespace Inventory.API.Controllers
             var products = _productService.GetProducts();
             return Ok(products);
         }
+
+        [HttpGet("category/{category}")]
+        public ActionResult<List<Product>> GetByCategory(string category)
+        {
+            var products = _productService.GetProducts()
+                .Where(p => p.Category.Equals(category, System.StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (products.Count == 0)
+            {
+                return NotFound($"No se encontraron productos en la categoría '{category}'.");
+            }
+
+            return Ok(products);
+        }
     }
 }
