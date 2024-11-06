@@ -5,7 +5,7 @@ namespace Inventory.Infrastructure.Repositories
 {
     public class ProductRepository
     {
-        private readonly string _filePath = "Data/inventory.json";
+        private readonly string _filePath = "C:\\ProjectsDEV\\Inventory\\Inventory.Infrastructure\\Data\\inventory.json";
 
 
         public List<Product> GetAllProducts()

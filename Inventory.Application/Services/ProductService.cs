@@ -1,5 +1,6 @@
 ﻿using Inventory.Application.Interfaces;
 using Inventory.Domain.Entities;
+using Inventory.Infrastructure.Repositories;
 
 namespace Inventory.Application.Services
 {

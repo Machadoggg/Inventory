@@ -1,6 +1,5 @@
 ﻿using Inventory.Application.Interfaces;
 using Inventory.Domain.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Inventory.API.Controllers
@@ -17,7 +16,7 @@ namespace Inventory.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Product>> Get() 
+        public ActionResult<List<Product>> Get()
         {
             var products = _productService.GetProducts();
             return Ok(products);
