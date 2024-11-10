@@ -49,7 +49,7 @@ namespace Inventory.API.Controllers
             return Ok(product);
         }
 
-        [HttpGet("price/greatherThan/{price}")]
+        [HttpGet("price/{price}")]
         public ActionResult<List<Product>> GetByPriceGreatherThan(decimal price)
         {
             var products = _productService.GetProducts()
