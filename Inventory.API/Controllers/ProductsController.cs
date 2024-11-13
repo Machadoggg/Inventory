@@ -25,9 +25,7 @@ namespace Inventory.API.Controllers
         [HttpGet("category/{category}")]
         public ActionResult<List<Product>> GetByCategory(string category)
         {
-            var products = _productService.GetProducts()
-                .Where(p => p.Category.Equals(category, System.StringComparison.OrdinalIgnoreCase))
-                .ToList();
+            var products = _productService.GetProductsByCategory(category);
 
             if (products.Count == 0)
             {
