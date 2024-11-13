@@ -23,5 +23,11 @@ namespace Inventory.Infrastructure.Repositories
             return products.Where(p => p.Category.Equals(category, System.StringComparison.OrdinalIgnoreCase))
                 .ToList();
         }
+
+        public List<Product> GetProductsById(int id)
+        {
+            var products = GetAllProducts();
+            return products.Where(p => p.Id == id).ToList();
+        }
     }
 }
