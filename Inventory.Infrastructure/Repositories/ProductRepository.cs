@@ -16,5 +16,12 @@ namespace Inventory.Infrastructure.Repositories
             var json = File.ReadAllText(_filePath);
             return JsonSerializer.Deserialize<List<Product>>(json) ?? new List<Product>();
         }
+
+        public List<Product> GetProductsByCategory(string category)
+        {
+            var products = GetAllProducts();
+            return products.Where(p => p.Category.Equals(category, System.StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
     }
 }
