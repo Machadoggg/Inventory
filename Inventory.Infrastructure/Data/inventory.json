@@ -38,5 +38,61 @@
     "Quantity": 10,
     "Price": 150.00,
     "Category": "Furniture"
+  },
+  {
+    "Id": 6,
+    "Name": "Desktop",
+    "Description": "High-performance Desktop",
+    "Quantity": 20,
+    "Price": 1500.99,
+    "Category": "Electronics"
+  },
+  {
+    "Id": 7,
+    "Name": "Mousepad",
+    "Description": "Mousepad",
+    "Quantity": 15,
+    "Price": 25.50,
+    "Category": "Accessories"
+  },
+  {
+    "Id": 8,
+    "Name": "Keyboard Gamer",
+    "Description": "Wireless keyboard",
+    "Quantity": 23,
+    "Price": 455.00,
+    "Category": "Accessories"
+  },
+  {
+    "Id": 9,
+    "Name": "Monitor Gamer",
+    "Description": "32-inch 4K monitor gamer",
+    "Quantity": 7,
+    "Price": 350.99,
+    "Category": "Electronics"
+  },
+  {
+    "Id": 10,
+    "Name": "Chair Gamer",
+    "Description": "Ergonomic gamer chair",
+    "Quantity": 30,
+    "Price": 250.00,
+    "Category": "Furniture"
+  },
+  {
+    "Id": 11,
+    "Name": "Monitor LCD",
+    "Description": "22-inch 4K monitor LCD",
+    "Quantity": 7,
+    "Price": 200.99,
+    "Category": "Electronics"
+  },
+  {
+    "Id": 12,
+    "Name": "Desk",
+    "Description": "Ergonomic desk",
+    "Quantity": 10,
+    "Price": 150.00,
+    "Category": "Furniture"
   }
 ]

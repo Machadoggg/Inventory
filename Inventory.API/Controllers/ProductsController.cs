@@ -57,7 +57,7 @@ namespace Inventory.API.Controllers
                 .ToList();
 
             if (products == null)
-                return NotFound($"No se encontraron productos con un precio mayoa a: {price}.");
+                return NotFound($"No se encontraron productos con un precio mayor a: {price}.");
 
             return Ok(products);
 
