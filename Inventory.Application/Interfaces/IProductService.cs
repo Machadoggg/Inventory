@@ -5,5 +5,6 @@ namespace Inventory.Application.Interfaces
     public interface IProductService
     {
         List<Product> GetProducts();
+        List<Product> GetProductsByCategory(string category);
     }
 }
