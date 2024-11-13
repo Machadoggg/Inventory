@@ -94,5 +94,13 @@
     "Quantity": 10,
     "Price": 150.00,
     "Category": "Furniture"
+  },
+  {
+    "Id": 13,
+    "Name": "Trackball",
+    "Description": "Trackball desk",
+    "Quantity": 20,
+    "Price": 250.00,
+    "Category": "Furniture"
   }
 ]
