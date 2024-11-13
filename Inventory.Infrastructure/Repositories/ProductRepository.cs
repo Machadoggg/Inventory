@@ -24,10 +24,10 @@ namespace Inventory.Infrastructure.Repositories
                 .ToList();
         }
 
-        public List<Product> GetProductsById(int id)
+        public Product? GetProductsById(int id)
         {
-            var products = GetAllProducts();
-            return products.Where(p => p.Id == id).ToList();
+            var product = GetAllProducts();
+            return product.FirstOrDefault(p => p.Id == id);
         }
     }
 }

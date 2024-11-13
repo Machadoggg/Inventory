@@ -23,7 +23,7 @@ namespace Inventory.Application.Services
             return _productRepository.GetProductsByCategory(category);
         }
 
-        public List<Product> GetProductsById(int id)
+        public Product GetProductsById(int id)
         {
             return _productRepository.GetProductsById(id);
         }

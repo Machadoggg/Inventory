@@ -38,8 +38,7 @@ namespace Inventory.API.Controllers
         [HttpGet("{id}")]
         public ActionResult<Product> GetById(int id)
         {
-            var product = _productService.GetProducts()
-                .FirstOrDefault(p => p.Id == id);
+            var product = _productService.GetProductsById(id);
 
             if (product == null)
                 return NotFound($"No se encontró un producto con el ID {id}.");
