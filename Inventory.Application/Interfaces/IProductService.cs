@@ -6,5 +6,6 @@ namespace Inventory.Application.Interfaces
     {
         List<Product> GetProducts();
         List<Product> GetProductsByCategory(string category);
+        List<Product> GetProductsById(int id);
     }
 }
