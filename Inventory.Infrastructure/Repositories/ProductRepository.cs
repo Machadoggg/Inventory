@@ -29,5 +29,11 @@ namespace Inventory.Infrastructure.Repositories
             var product = GetAllProducts();
             return product.FirstOrDefault(p => p.Id == id);
         }
+
+        public List<Product> GetProductsByPriceGreatherThan(decimal price)
+        {
+            var products = GetAllProducts().Where(p => p.Price > price).ToList();
+            return products;
+        }
     }
 }

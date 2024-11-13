@@ -13,6 +13,7 @@ namespace Inventory.Application.Services
             _productRepository = productRepository;
         }
 
+
         public List<Product> GetProducts()
         {
             return _productRepository.GetAllProducts();
@@ -23,9 +24,14 @@ namespace Inventory.Application.Services
             return _productRepository.GetProductsByCategory(category);
         }
 
-        public Product GetProductsById(int id)
+        public Product? GetProductsById(int id)
         {
             return _productRepository.GetProductsById(id);
+        }
+
+        public List<Product> GetProductsByPriceGreatherThan(decimal price)
+        {
+            return _productRepository.GetProductsByPriceGreatherThan(price);
         }
     }
 }
