@@ -17,5 +17,10 @@ namespace Inventory.Application.Services
         {
             return _productRepository.GetAllProducts();
         }
+
+        public List<Product> GetProductsByCategory(string category)
+        {
+            return _productRepository.GetProductsByCategory(category);
+        }
     }
 }
