@@ -7,6 +7,6 @@ namespace Inventory.Application.Interfaces
         Task<List<Product>> GetAllProductsAsync();
         Task<List<Product>> GetProductsByCategoryAsync(string category);
         Task<Product> GetProductsByIdAsync(int id);
-        List<Product> GetProductsByPriceGreatherThan(decimal price);
+        Task<List<Product>> GetPriceGreatherThanAsync(decimal price);
     }
 }

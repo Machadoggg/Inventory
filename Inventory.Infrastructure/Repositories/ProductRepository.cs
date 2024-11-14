@@ -7,11 +7,6 @@ namespace Inventory.Infrastructure.Repositories
     {
         private readonly string _filePath = "C:\\ProjectsDEV\\Inventory\\Inventory.Infrastructure\\Data\\inventory.json";
 
-        public ProductRepository(string filePath)
-        {
-            _filePath = filePath;
-        }
-
         public async Task<List<Product>> GetAllProductsAsync()
         {
             if (!File.Exists(_filePath))
@@ -34,10 +29,10 @@ namespace Inventory.Infrastructure.Repositories
             return product.FirstOrDefault(p => p.Id == id);
         }
 
-        public List<Product> GetProductsByPriceGreatherThan(decimal price)
+        public async Task<List<Product>> GetPriceGreatherThanAsync(decimal price)
         {
-            var products = GetAllProducts().Where(p => p.Price > price).ToList();
-            return products;
+            var products = await GetAllProductsAsync();
+            return products.Where(p => p.Price > price).ToList();
         }
     }
 }

@@ -47,9 +47,9 @@ namespace Inventory.API.Controllers
         }
 
         [HttpGet("price/{price}")]
-        public ActionResult<List<Product>> GetByPriceGreatherThan(decimal price)
+        public async Task<ActionResult<List<Product>>> GetPriceGreatherThan(decimal price)
         {
-            var products = _productService.GetProductsByPriceGreatherThan(price);
+            var products = await _productService.GetPriceGreatherThanAsync(price);
 
             if (products == null)
                 return NotFound($"No se encontraron productos con un precio mayor a: {price}.");
