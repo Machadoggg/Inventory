@@ -21,10 +21,10 @@ namespace Inventory.Infrastructure.Repositories
             return JsonSerializer.Deserialize<List<Product>>(json) ?? new List<Product>();
         }
 
-        public List<Product> GetProductsByCategory(string category)
+        public async Task<List<Product>> GetProductsByCategoryAsync(string category)
         {
-            var products = GetAllProducts();
-            return products.Where(p => p.Category.Equals(category, System.StringComparison.OrdinalIgnoreCase))
+            var products = await GetAllProductsAsync();
+            return products.Where(p => p.Category == category)
                 .ToList();
         }
 
