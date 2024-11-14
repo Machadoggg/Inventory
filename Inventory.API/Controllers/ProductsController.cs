@@ -16,9 +16,9 @@ namespace Inventory.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Product>> Get()
+        public async Task<ActionResult<List<Product>>> Get()
         {
-            var products = _productService.GetProducts();
+            var products = await _productService.GetAllProductsAsync();
             return Ok(products);
         }
 

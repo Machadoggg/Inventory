@@ -7,13 +7,17 @@ namespace Inventory.Infrastructure.Repositories
     {
         private readonly string _filePath = "C:\\ProjectsDEV\\Inventory\\Inventory.Infrastructure\\Data\\inventory.json";
 
+        public ProductRepository(string filePath)
+        {
+            _filePath = filePath;
+        }
 
-        public List<Product> GetAllProducts()
+        public async Task<List<Product>> GetAllProductsAsync()
         {
             if (!File.Exists(_filePath))
                 return new List<Product>();
 
-            var json = File.ReadAllText(_filePath);
+            var json = await File.ReadAllTextAsync(_filePath);
             return JsonSerializer.Deserialize<List<Product>>(json) ?? new List<Product>();
         }
 
