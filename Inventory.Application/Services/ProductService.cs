@@ -24,9 +24,9 @@ namespace Inventory.Application.Services
             return await _productRepository.GetProductsByCategoryAsync(category);
         }
 
-        public Product? GetProductsById(int id)
+        public async Task<Product?> GetProductsByIdAsync(int id)
         {
-            return _productRepository.GetProductsById(id);
+            return await _productRepository.GetProductsByIdAsync(id);
         }
 
         public List<Product> GetProductsByPriceGreatherThan(decimal price)

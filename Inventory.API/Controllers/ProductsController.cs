@@ -36,9 +36,9 @@ namespace Inventory.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Product> GetById(int id)
+        public async Task<ActionResult<Product>> GetById(int id)
         {
-            var product = _productService.GetProductsById(id);
+            var product = await _productService.GetProductsByIdAsync(id);
 
             if (product == null)
                 return NotFound($"No se encontró un producto con el ID {id}.");

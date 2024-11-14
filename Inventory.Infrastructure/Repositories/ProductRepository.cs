@@ -28,9 +28,9 @@ namespace Inventory.Infrastructure.Repositories
                 .ToList();
         }
 
-        public Product? GetProductsById(int id)
+        public async Task<Product?> GetProductsByIdAsync(int id)
         {
-            var product = GetAllProducts();
+            var product = await GetAllProductsAsync();
             return product.FirstOrDefault(p => p.Id == id);
         }
 
