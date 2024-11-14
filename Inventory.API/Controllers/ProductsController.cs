@@ -16,14 +16,14 @@ namespace Inventory.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> Get()
+        public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
             var products = await _productService.GetAllProductsAsync();
             return Ok(products);
         }
 
         [HttpGet("category/{category}")]
-        public async Task<ActionResult<List<Product>>> GetProductsByCategoryAsync(string category)
+        public async Task<ActionResult<List<Product>>> GetProductsByCategory(string category)
         {
             var products = await _productService.GetProductsByCategoryAsync(category);
 
