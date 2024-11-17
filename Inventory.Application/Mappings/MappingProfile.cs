@@ -2,7 +2,7 @@
 using Inventory.Domain.Entities;
 using Inventory.Application.DTOs;
 
-namespace Inventory.Infrastructure.Mappings
+namespace Inventory.Application.Mappings
 {
     public class MappingProfile : Profile
     {

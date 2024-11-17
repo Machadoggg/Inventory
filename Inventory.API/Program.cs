@@ -1,4 +1,5 @@
 using Inventory.Application.Interfaces;
+using Inventory.Application.Mappings;
 using Inventory.Application.Services;
 using Inventory.Infrastructure.Repositories;
 
@@ -19,6 +20,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Automapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // dependencies
 builder.Services.AddScoped<IProductService, ProductService>();
