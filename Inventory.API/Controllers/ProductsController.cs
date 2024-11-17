@@ -1,4 +1,6 @@
-﻿using Inventory.Application.Interfaces;
+﻿using Inventory.API.Generic;
+using Inventory.Application.DTOs;
+using Inventory.Application.Interfaces;
 using Inventory.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +22,18 @@ namespace Inventory.API.Controllers
         {
             var products = await _productService.GetAllProductsAsync();
             return Ok(products);
+        }
+
+        [HttpGet("paginated")]
+        public async Task<ActionResult<PaginatedResult<Product>>> GetPaginated(int page = 1, int pageSize = 10)
+        {
+            var products = await _productService.GetAllProductsAsync();
+            var paginatedResult = new PaginatedResult<ProductDto>
+            {
+                Items = products.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                TotalCount = products.Count
+            };
+            return Ok(paginatedResult);
         }
 
         [HttpGet("category/{category}")]
